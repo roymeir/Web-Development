@@ -49,3 +49,7 @@ li:hover {
 .delete_task {
   cursor: pointer;
 }
+
+label{
+  font-size: 20px;
+}
