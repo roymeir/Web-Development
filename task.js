@@ -26,7 +26,7 @@ function addTask(task) {
     taskList.appendChild(newTask);
 
     newTask.onclick = () => {
-      select_task(this);
+      select_task(newTask);
     };
 
     selectAll_button.onclick = () => {
