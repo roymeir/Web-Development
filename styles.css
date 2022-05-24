@@ -42,12 +42,10 @@ li {
 li:hover {
   background-color: rgba(218, 212, 212, 0.4);
   transition: 0.3s linear;
+  cursor: pointer;
 }
 .task-list li.completed {
   color: greenyellow;
-}
-.delete_task {
-  cursor: pointer;
 }
 
 label{

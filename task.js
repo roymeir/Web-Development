@@ -42,17 +42,19 @@ function addTask(task) {
 function select_task(newTask) {
   newTask.classList.toggle("completed");
 
-  newTask.classList.contains("completed") ?
-    ((newTask.innerHTML = `<span>${newTask.innerHTML} &#10004;</span><span onclick='deleteTask()'>&#10060</span>`),
-      newTask.classList.toggle("delete_task")) :
-    ((newTask.innerHTML = `${newTask.innerHTML.charAt(6)}`),
-      newTask.classList.toggle("delete_task"));
-}
+  if ($(newTask).hasClass("completed")){
+    $(newTask).append("<span onclick='deleteTask()'>&#10060</span>");
+  }
 
-// delete task function
+  else{
+    $(newTask).html(
+      $(newTask).html().substring(0,($(newTask).html().length - 37))
+    );
+  }
+}
 
 function deleteTask() {
   document.querySelectorAll("li").forEach((element) => {
-    element.classList.contains("delete_task") ? element.remove() : element;
+    element.classList.contains("completed") ? element.remove() : element;
   });
 }
